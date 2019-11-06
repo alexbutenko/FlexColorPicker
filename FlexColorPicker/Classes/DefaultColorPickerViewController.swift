@@ -110,6 +110,8 @@ open class DefaultColorPickerViewController: UIViewController, ColorPickerContro
 
         addColorControls()
         updateLayout(for: view.bounds.size)
+        colorPalette.thumbView.autoDarken = false
+        colorPalette.thumbView.borderView.backgroundColor = .darkGray
     }
 
     open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

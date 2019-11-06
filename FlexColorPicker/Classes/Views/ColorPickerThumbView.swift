@@ -130,6 +130,10 @@ extension ColorPickerThumbView {
     }
 
     open func setDarkBorderIfNeeded(animated: Bool = true) {
+        if !autoDarken {
+            return
+        }
+        
         let (_, s, b) = color.hsbColor.asTupleNoAlpha()
         let isBorderDark = autoDarken && 1 - b < brightnessToChangeToDark && s < saturationToChangeToDark
 //        let isBorderDark = autoDarken && color.constrastRatio(with: .white) < maxContrastRatioWithWhiteToDarken
